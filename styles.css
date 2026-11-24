@@ -209,3 +209,38 @@ body{margin:0;
     padding: 8px 14px;
   }
 }
+
+/* Correção de visibilidade do FAQ no mobile */
+@media (max-width: 820px) {
+    .faq-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .faq-intro {
+        position: static;
+    }
+
+    .faq-items,
+    .faq-item {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .faq-section .reveal,
+    .js-enabled .faq-section .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+    .faq-item summary {
+        display: flex;
+        visibility: visible;
+        opacity: 1;
+        overflow-wrap: anywhere;
+    }
+
+    .faq-item summary svg {
+        flex-shrink: 0;
+    }
+}
